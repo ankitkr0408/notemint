@@ -16,5 +16,6 @@ A full-stack notes application built with **Next.js 15** and **Supabase**, suppo
 ## 📦 Tech Stack
 - [Next.js 15](https://nextjs.org/)
 - [Supabase](https://supabase.com/)
-- [Tailwind CSS](https://tailwindcss.com/) (if used)
-- TypeScript / JavaScript
+- [Tailwind CSS](https://tailwindcss.com/) 
+- TypeScript
+
