@@ -50,22 +50,6 @@ export default function Home() {
             <p className="text-gray-600">Your notes sync instantly across all your devices.</p>
           </div>
         </div>
-
-        {/* <div className="bg-white rounded-lg shadow-lg p-8 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Built with Modern Technology
-          </h2>
-          <p className="text-gray-600 mb-6">
-            Powered by Next.js 14, Tailwind CSS, and Supabase for the best user experience.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4 text-sm">
-            <span className="bg-gray-100 px-3 py-1 rounded-full">Next.js 14</span>
-            <span className="bg-gray-100 px-3 py-1 rounded-full">Tailwind CSS</span>
-            <span className="bg-gray-100 px-3 py-1 rounded-full">Supabase</span>
-            <span className="bg-gray-100 px-3 py-1 rounded-full">TypeScript</span>
-            <span className="bg-gray-100 px-3 py-1 rounded-full">Vercel</span>
-          </div>
-        </div> */}
       </div>
     </div>
   )
