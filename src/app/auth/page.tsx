@@ -1,14 +1,22 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useSearchParams } from 'next/navigation'
 import LoginForm from '@/components/auth/LoginForm'
 import SignupForm from '@/components/auth/SignupForm'
 import Link from 'next/link'
+import { Suspense } from 'react'
 
-export default function AuthPage() {
+function AuthContent() {
   const searchParams = useSearchParams()
-  const [activeTab, setActiveTab] = useState(searchParams.get('tab') === 'login' ? 'login' : 'signup')
+  const [activeTab, setActiveTab] = useState('signup')
+
+  useEffect(() => {
+    const tab = searchParams.get('tab')
+    if (tab === 'login') {
+      setActiveTab('login')
+    }
+  }, [searchParams])
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
@@ -50,5 +58,20 @@ export default function AuthPage() {
         </div>
       </div>
     </div>
+  )
+}
+
+export default function AuthPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto"></div>
+          <p className="mt-2 text-gray-600">Loading...</p>
+        </div>
+      </div>
+    }>
+      <AuthContent />
+    </Suspense>
   )
 }
